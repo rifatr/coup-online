@@ -12,6 +12,7 @@ const translations = {
     'hi-IN': 'यह क्रिया चुनौती नहीं दी जा सकती',
     'it-IT': 'Questa azione non può essere contestata',
     'pt-BR': 'Esta ação não pode ser contestada',
+    'bn-BD': 'এই কার্যক্রমটি চ্যালেঞ্জ করা যাবে না',
   },
   actionNotCurrentlyAllowed: {
     'de-DE': 'Diese Aktion ist gerade nicht erlaubt',
@@ -21,6 +22,7 @@ const translations = {
     'hi-IN': 'आप अभी इस क्रिया को नहीं कर सकते',
     'it-IT': 'Non puoi eseguire questa azione in questo momento',
     'pt-BR': 'Você não pode realizar esta ação no momento',
+    'bn-BD': 'আপনি এখন এই কার্যক্রমটি নিতে পারবেন না',
   },
   blockMayNotBeBlocked: {
     'de-DE': 'Du kannst einen Block nicht blockieren',
@@ -30,6 +32,7 @@ const translations = {
     'hi-IN': 'आप एक ब्लॉक को ब्लॉक नहीं कर सकते',
     'it-IT': 'Non puoi bloccare un blocco',
     'pt-BR': 'Você não pode bloquear um bloqueio',
+    'bn-BD': 'আপনি একটি ব্লককে ব্লক করতে পারবেন না',
   },
   claimedInfluenceAlreadyConfirmed: {
     'de-DE': 'Der beanspruchte Einfluss wurde bereits bestätigt',
@@ -39,6 +42,7 @@ const translations = {
     'hi-IN': 'दावा की गई प्रभाव पहले ही पुष्टि हो चुकी है',
     'it-IT': 'L\'influenza rivendicata è già stata confermata',
     'pt-BR': 'A influência reivindicada já foi confirmada',
+    'bn-BD': 'দাবি করা প্রভাব ইতিমধ্যে নিশ্চিত হয়েছে',
   },
   claimedInfluenceInvalid: {
     'de-DE': 'Der beanspruchte Einfluss ist ungültig',
@@ -48,6 +52,7 @@ const translations = {
     'hi-IN': 'दावा की गई प्रभाव अमान्य है',
     'it-IT': 'L\'influenza rivendicata è invalida',
     'pt-BR': 'A influência reivindicada é inválida',
+    'bn-BD': 'দাবি করা প্রভাব অবৈধ',
   },
   claimedInfluenceRequired: {
     'de-DE': 'Der beanspruchte Einfluss ist erforderlich',
@@ -57,6 +62,7 @@ const translations = {
     'hi-IN': 'दावा की गई प्रभाव आवश्यक है',
     'it-IT': 'L\'influenza rivendicata è necessaria',
     'pt-BR': 'A influência reivindicada é necessária',
+    'bn-BD': 'দাবি করা প্রভাব প্রয়োজন',
   },
   deckIsEmpty: {
     'de-DE': 'Das Deck ist leer',
@@ -66,6 +72,7 @@ const translations = {
     'hi-IN': 'डेक खाली है',
     'it-IT': 'Il mazzo è vuoto',
     'pt-BR': 'O baralho está vazio',
+    'bn-BD': 'ডেক খালি',
   },
   everyonePassedWithPendingDecision: {
     'de-DE': 'Alle haben gepasst, aber eine Entscheidung steht noch aus',
@@ -75,6 +82,7 @@ const translations = {
     'hi-IN': 'सभी ने पास किया, लेकिन एक निर्णय अभी भी लंबित है',
     'it-IT': 'Tutti hanno passato, ma una decisione è ancora in sospeso',
     'pt-BR': 'Todos passaram, mas uma decisão ainda está pendente',
+    'bn-BD': 'সবাই পাস করেছেন কিন্তু একটি সিদ্ধান্ত এখনও মুলতুবি',
   },
   gameInProgress: {
     'de-DE': 'Das Spiel ist im Gange',
@@ -84,6 +92,7 @@ const translations = {
     'hi-IN': 'खेल प्रगति पर है',
     'it-IT': 'Il gioco è in corso',
     'pt-BR': 'O jogo está em andamento',
+    'bn-BD': 'খেলা চলছে',
   },
   gameNeedsAtLeast2PlayersToStart: {
     'de-DE': 'Das Spiel benötigt mindestens 2 Spieler, um zu starten',
@@ -93,6 +102,7 @@ const translations = {
     'hi-IN': 'खेल को शुरू करने के लिए कम से कम 2 खिलाड़ियों की आवश्यकता है',
     'it-IT': 'Il gioco ha bisogno di almeno 2 giocatori per iniziare',
     'pt-BR': 'O jogo precisa de pelo menos 2 jogadores para começar',
+    'bn-BD': 'খেলা শুরু করতে কমপক্ষে ২ জন খেলোয়াড় প্রয়োজন',
   },
   gameNotInProgress: {
     'de-DE': 'Das Spiel ist noch nicht im Gange',
@@ -102,6 +112,7 @@ const translations = {
     'hi-IN': 'खेल अभी प्रगति पर नहीं है',
     'it-IT': 'Il gioco non è ancora in corso',
     'pt-BR': 'O jogo ainda não está em andamento',
+    'bn-BD': 'খেলা এখনও চলছে না',
   },
   gameOver: {
     'de-DE': 'Das Spiel ist vorbei',
@@ -111,6 +122,7 @@ const translations = {
     'hi-IN': 'खेल खत्म हो गया है',
     'it-IT': 'Il gioco è finito',
     'pt-BR': 'O jogo acabou',
+    'bn-BD': 'খেলা শেষ',
   },
   incorrectTotalCardCount: {
     'de-DE': 'Falsche Gesamtanzahl der Karten im Spiel',
@@ -120,6 +132,7 @@ const translations = {
     'hi-IN': 'खेल में कुल कार्ड की संख्या गलत है',
     'it-IT': 'Conteggio totale delle carte errato nel gioco',
     'pt-BR': 'Contagem total de cartas incorreta no jogo',
+    'bn-BD': 'খেলায় মোট কার্ডের সংখ্যা ভুল',
   },
   insufficientCoins: {
     'de-DE': 'Du hast nicht genug Münzen',
@@ -129,6 +142,7 @@ const translations = {
     'hi-IN': 'आपके पास पर्याप्त सिक्के नहीं हैं',
     'it-IT': 'Non hai abbastanza monete',
     'pt-BR': 'Você não tem moedas suficientes',
+    'bn-BD': 'আপনার পর্যাপ্ত কয়েন নেই',
   },
   invalidActionAt10Coins: {
     'de-DE': 'Ungültige Aktion, wenn du 10 oder mehr Münzen hast',
@@ -138,6 +152,7 @@ const translations = {
     'hi-IN': '10 या अधिक सिक्के होने पर अमान्य क्रिया',
     'it-IT': 'Azione non valida quando hai 10 o più monete',
     'pt-BR': 'Ação inválida quando você tem 10 ou mais moedas',
+    'bn-BD': '১০ বা তার বেশি কয়েন থাকলে অবৈধ কার্যক্রম',
   },
   invalidPlayerCount: {
     'de-DE': 'Das Spiel muss zwischen 1 und {{count}} Spielern haben',
@@ -147,6 +162,7 @@ const translations = {
     'hi-IN': 'खेल में 1 और {{count}} खिलाड़ियों के बीच होना चाहिए',
     'it-IT': 'Il gioco deve avere tra 1 e {{count}} giocatori',
     'pt-BR': 'O jogo deve ter entre 1 e {{count}} jogadores',
+    'bn-BD': 'খেলায় ১ থেকে {{count}} জন খেলোয়াড় থাকতে হবে',
   },
   invalidTurnPlayer: {
     'de-DE': 'Ungültiger Zugspieler',
@@ -156,6 +172,7 @@ const translations = {
     'hi-IN': 'अमान्य टर्न खिलाड़ी',
     'it-IT': 'Giocatore di turno non valido',
     'pt-BR': 'Jogador de turno inválido',
+    'bn-BD': 'অবৈধ টার্ন খেলোয়াড়',
   },
   invalidUserRequest: {
     'de-DE': 'Ungültige Benutzeranfrage',
@@ -165,6 +182,7 @@ const translations = {
     'hi-IN': 'अमान्य उपयोगकर्ता अनुरोध',
     'it-IT': 'Richiesta utente non valida',
     'pt-BR': 'Solicitação de usuário inválida',
+    'bn-BD': 'অবৈধ ব্যবহারকারীর অনুরোধ',
   },
   joinAsPlayerName: {
     'de-DE': 'Du kannst dem Spiel als "{{playerName}}" beitreten',
@@ -174,6 +192,7 @@ const translations = {
     'hi-IN': 'आप "{{playerName}}" के रूप में खेल में शामिल हो सकते हैं',
     'it-IT': 'Puoi unirti al gioco come "{{playerName}}"',
     'pt-BR': 'Você pode entrar no jogo como "{{playerName}}"',
+    'bn-BD': 'আপনি "{{playerName}}" হিসেবে খেলায় যোগ দিতে পারেন',
   },
   messageDoesNotExist: {
     'de-DE': 'Nachricht existiert nicht',
@@ -183,6 +202,7 @@ const translations = {
     'hi-IN': 'संदेश मौजूद नहीं है',
     'it-IT': 'Il messaggio non esiste',
     'pt-BR': 'A mensagem não existe',
+    'bn-BD': 'বার্তা বিদ্যমান নেই',
   },
   messageIsNotYours: {
     'de-DE': 'Die Nachricht gehört dir nicht',
@@ -192,6 +212,7 @@ const translations = {
     'hi-IN': 'संदेश आपका नहीं है',
     'it-IT': 'Il messaggio non è tuo',
     'pt-BR': 'A mensagem não é sua',
+    'bn-BD': 'বার্তাটি আপনার নয়',
   },
   missingInfluence: {
     'de-DE': 'Du hast den erforderlichen Einfluss nicht',
@@ -201,6 +222,7 @@ const translations = {
     'hi-IN': 'आपके पास आवश्यक प्रभाव नहीं है',
     'it-IT': 'Non hai l\'influenza richiesta',
     'pt-BR': 'Você não tem a influência necessária',
+    'bn-BD': 'আপনার প্রয়োজনীয় প্রভাব নেই',
   },
   noDeadInfluences: {
     'de-DE': 'Keine toten Einflüsse',
@@ -210,6 +232,7 @@ const translations = {
     'hi-IN': 'कोई मृत प्रभाव नहीं है',
     'it-IT': 'Nessuna influenza morta',
     'pt-BR': 'Sem influências mortas',
+    'bn-BD': 'কোনো মৃত প্রভাব নেই',
   },
   playerNotInGame: {
     'de-DE': 'Spieler ist nicht im Spiel',
@@ -219,6 +242,7 @@ const translations = {
     'hi-IN': 'खिलाड़ी खेल में नहीं है',
     'it-IT': 'Il giocatore non è nel gioco',
     'pt-BR': 'O jogador não está no jogo',
+    'bn-BD': 'খেলোয়াড় খেলায় নেই',
   },
   playersMustHave2Influences: {
     'de-DE': 'Spieler müssen genau 2 Einflüsse haben',
@@ -228,6 +252,7 @@ const translations = {
     'hi-IN': 'खिलाड़ियों को ठीक 2 प्रभाव होने चाहिए',
     'it-IT': 'I giocatori devono avere esattamente 2 influenze',
     'pt-BR': 'Os jogadores devem ter exatamente 2 influências',
+    'bn-BD': 'খেলোয়াড়দের ঠিক ২টি প্রভাব থাকতে হবে',
   },
   reviveNotAllowedInGame: {
     'de-DE': 'Wiederbelebung im Spiel nicht erlaubt',
@@ -237,6 +262,7 @@ const translations = {
     'hi-IN': 'खिलाड़ी को खेल में पुनर्जीवित करने की अनुमति नहीं है',
     'it-IT': 'Rivivere non consentito nel gioco',
     'pt-BR': 'Reviver não permitido no jogo',
+    'bn-BD': 'খেলায় পুনরুজ্জীবন অনুমোদিত নয়',
   },
   roomAlreadyHasPlayer: {
     'de-DE': 'Der Raum hat bereits einen Spieler namens "{{playerName}}"',
@@ -246,6 +272,7 @@ const translations = {
     'hi-IN': 'कमरे में पहले से ही एक खिलाड़ी है जिसका नाम "{{playerName}}" है',
     'it-IT': 'La stanza ha già un giocatore di nome "{{playerName}}"',
     'pt-BR': 'A sala já tem um jogador chamado "{{playerName}}"',
+    'bn-BD': 'কক্ষে ইতিমধ্যে "{{playerName}}" নামের একজন খেলোয়াড় আছেন',
   },
   roomIdAlreadyExists: {
     'de-DE': 'Der Raum mit der ID "{{roomId}}" existiert bereits',
@@ -255,6 +282,7 @@ const translations = {
     'hi-IN': 'ID "{{roomId}}" वाला कमरा पहले से मौजूद है',
     'it-IT': 'La stanza con ID "{{roomId}}" esiste già',
     'pt-BR': 'A sala com ID "{{roomId}}" já existe',
+    'bn-BD': '"{{roomId}}" আইডির কক্ষ ইতিমধ্যে বিদ্যমান',
   },
   roomIsFull: {
     'de-DE': 'Der Raum {{roomId}} ist voll',
@@ -264,6 +292,7 @@ const translations = {
     'hi-IN': 'कमरा {{roomId}} भरा हुआ है',
     'it-IT': 'La stanza {{roomId}} è piena',
     'pt-BR': 'A sala {{roomId}} está cheia',
+    'bn-BD': 'কক্ষ {{roomId}} পূর্ণ',
   },
   roomNotFound: {
     'de-DE': "Raum nicht gefunden",
@@ -273,6 +302,7 @@ const translations = {
     'hi-IN': "कमरा नहीं मिला",
     'it-IT': "Stanza non trovata",
     'pt-BR': "Sala não encontrada",
+    'bn-BD': "কক্ষ খুঁজে পাওয়া যায়নি",
   },
   speedRoundTimerExpired: {
     'de-DE': 'Die Zeit für die Schnellrunde ist abgelaufen',
@@ -282,6 +312,7 @@ const translations = {
     'hi-IN': 'स्पीड राउंड टाइमर समाप्त हो गया है',
     'it-IT': 'Il timer del round veloce è scaduto',
     'pt-BR': 'O cronômetro da rodada rápida expirou',
+    'bn-BD': 'স্পিড রাউন্ডের টাইমার শেষ হয়েছে',
   },
   stateChangedSinceValidation: {
     'de-DE': 'Der Status hat sich seit der Validierung geändert',
@@ -291,6 +322,7 @@ const translations = {
     'hi-IN': 'स्थिति मान्यता के बाद बदल गई है',
     'it-IT': 'Lo stato è cambiato dalla convalida',
     'pt-BR': 'O estado mudou desde a validação',
+    'bn-BD': 'যাচাইয়ের পর থেকে অবস্থা পরিবর্তিত হয়েছে',
   },
   targetPlayerIsSelf: {
     'de-DE': 'Du kannst dich nicht selbst anvisieren',
@@ -300,6 +332,7 @@ const translations = {
     'hi-IN': 'आप खुद को लक्ष्य नहीं बना सकते',
     'it-IT': 'Non puoi mirare a te stesso',
     'pt-BR': 'Você não pode se mirar',
+    'bn-BD': 'আপনি নিজেকে লক্ষ্য করতে পারবেন না',
   },
   targetPlayerNotAllowedForAction: {
     'de-DE': 'Zielspieler für Aktion nicht erlaubt',
@@ -309,6 +342,7 @@ const translations = {
     'hi-IN': 'लक्ष्य खिलाड़ी कार्रवाई के लिए अनुमति नहीं है',
     'it-IT': 'Giocatore target non consentito per l\'azione',
     'pt-BR': 'Jogador alvo não permitido para a ação',
+    'bn-BD': 'কার্যক্রমের জন্য লক্ষ্য খেলোয়াড় অনুমোদিত নয়',
   },
   targetPlayerRequiredForAction: {
     'de-DE': 'Zielspieler für Aktion erforderlich',
@@ -318,6 +352,7 @@ const translations = {
     'hi-IN': 'लक्ष्य खिलाड़ी कार्रवाई के लिए आवश्यक है',
     'it-IT': 'Giocatore target richiesto per l\'azione',
     'pt-BR': 'Jogador alvo necessário para a ação',
+    'bn-BD': 'কার্যক্রমের জন্য লক্ষ্য খেলোয়াড় প্রয়োজন',
   },
   unableToDetermineNextPlayerTurn: {
     'de-DE': 'Nächsten Zugspieler nicht bestimmt',
@@ -327,6 +362,7 @@ const translations = {
     'hi-IN': 'अगले खिलाड़ी की बारी निर्धारित करने में असमर्थ',
     'it-IT': 'Impossibile determinare il prossimo turno del giocatore',
     'pt-BR': 'Não foi possível determinar o próximo turno do jogador',
+    'bn-BD': 'পরবর্তী খেলোয়াড়ের টার্ন নির্ধারণ করতে অক্ষম',
   },
   unableToFindPendingAction: {
     'de-DE': 'Ausstehende Aktion nicht gefunden',
@@ -336,6 +372,7 @@ const translations = {
     'hi-IN': 'लंबित कार्रवाई नहीं मिली',
     'it-IT': 'Impossibile trovare l\'azione in sospeso',
     'pt-BR': 'Não foi possível encontrar a ação pendente',
+    'bn-BD': 'মুলতুবি কার্যক্রম খুঁজে পাওয়া যাচ্ছে না',
   },
   unableToFindPlayer: {
     'de-DE': 'Spieler nicht gefunden',
@@ -345,6 +382,7 @@ const translations = {
     'hi-IN': 'खिलाड़ी नहीं मिला',
     'it-IT': 'Giocatore non trovato',
     'pt-BR': 'Jogador não encontrado',
+    'bn-BD': 'খেলোয়াড় খুঁজে পাওয়া যাচ্ছে না',
   },
   unableToForfeit: {
     'de-DE': 'Du kannst das Spiel im Moment nicht aufgeben',
@@ -354,6 +392,7 @@ const translations = {
     'hi-IN': 'आप इस समय खेल को छोड़ नहीं सकते',
     'it-IT': 'Non puoi rinunciare al gioco in questo momento',
     'pt-BR': 'Você não pode desistir do jogo neste momento',
+    'bn-BD': 'আপনি এই মুহূর্তে খেলা ছেড়ে দিতে পারবেন না',
   },
   wrongPlayerIdOnSocket: {
     'de-DE': 'Falsche Spieler-ID im Socket',
@@ -363,6 +402,7 @@ const translations = {
     'hi-IN': 'सॉकेट पर गलत खिलाड़ी आईडी',
     'it-IT': 'ID giocatore errato sul socket',
     'pt-BR': 'ID de jogador incorreta no socket',
+    'bn-BD': 'সকেটে ভুল খেলোয়াড় আইডি',
   },
   youAreDead: {
     'de-DE': 'Du bist tot',
@@ -372,6 +412,7 @@ const translations = {
     'hi-IN': 'आप मर चुके हैं',
     'it-IT': 'Sei morto',
     'pt-BR': 'Você está morto',
+    'bn-BD': 'আপনি মৃত',
   }
 } as const satisfies AllTranslations
 

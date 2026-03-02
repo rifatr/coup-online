@@ -12,7 +12,7 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p tsconfig.check.json",
     "test": "vitest run --coverage",
-    "build": "rm -rf dist && tsc",
+    "build": "node -e \"require('fs').rmSync('dist', {recursive: true, force: true})\" && tsc",
     "dev": "ts-node index.ts",
     "start": "node dist/server/index.js"
   },

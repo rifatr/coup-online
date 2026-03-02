@@ -11,7 +11,7 @@ interface UserSettingsContextType {
 
 const UserSettingsContext = createContext<UserSettingsContextType>({
   showBackgroundImage: true,
-  confirmActions: true,
+  confirmActions: false,
   setShowBackgroundImage: () => {
     console.warn('setShowBackgroundImage called without a provider')
   },

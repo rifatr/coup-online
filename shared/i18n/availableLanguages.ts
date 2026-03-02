@@ -6,6 +6,7 @@ export enum AvailableLanguageCode {
   "it-IT" = "it-IT",
   "pt-BR" = "pt-BR",
   "hi-IN" = "hi-IN",
+  "bn-BD" = "bn-BD",
 }
 
 export type AvailableLanguage = {
@@ -49,5 +50,10 @@ export const availableLanguages: AvailableLanguage[] = [
     code: AvailableLanguageCode["hi-IN"],
     flag: "🇮🇳",
     name: "हिन्दी",
+  },
+  {
+    code: AvailableLanguageCode["bn-BD"],
+    flag: "🇧🇩",
+    name: "বাংলা",
   },
 ]
