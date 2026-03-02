@@ -1,10 +1,11 @@
-import { Badge, Button, Grid, Paper, Tooltip, Typography, useTheme } from "@mui/material"
+import { Badge, Box, Button, Grid, Paper, Tooltip, Typography, useTheme } from "@mui/material"
 import { colord } from 'colord'
 import { useGameStateContext } from "../../contexts/GameStateContext"
 import { Close, MonetizationOn } from "@mui/icons-material"
 import OverflowTooltip from "../utilities/OverflowTooltip"
 import InfluenceIcon from "../icons/InfluenceIcon"
 import { LIGHT_COLOR_MODE } from "../../contexts/MaterialThemeContext"
+import influenceImages from "../../helpers/influenceImages"
 import { getPlayerId, getWaitingOnPlayers } from "../../helpers/players"
 import { PlayerActions } from "@shared"
 import useGameMutation from "../../hooks/useGameMutation"
@@ -135,11 +136,12 @@ function Players({ inWaitingRoom = false }: Readonly<{ inWaitingRoom?: boolean }
                         sx={{
                           justifyContent: 'center',
                           alignContent: 'center',
-                          height: '44px',
-                          width: '44px',
+                          height: influence ? '86px' : '44px',
+                          width: influence ? '56px' : '44px',
                           background: colord(playerColor).darken(colorModeFactor * 0.25).toHex(),
                           padding: 0.5,
-                          borderRadius: 2
+                          borderRadius: 2,
+                          overflow: 'hidden',
                         }}>
                         <Tooltip
                           title={
@@ -151,7 +153,16 @@ function Players({ inWaitingRoom = false }: Readonly<{ inWaitingRoom?: boolean }
                           }
                         >
                           <span>
-                            <InfluenceIcon sx={{ fontSize: '32px', color: colord(playerColor).lighten(colorModeFactor * 0.2).toHex() }} influence={influence} />
+                            {influence ? (
+                              <Box
+                                component="img"
+                                src={influenceImages[influence]}
+                                alt={influence}
+                                sx={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                              />
+                            ) : (
+                              <InfluenceIcon sx={{ fontSize: '32px', align: 'center', color: colord(playerColor).lighten(colorModeFactor * 0.2).toHex() }} influence={influence} />
+                            )}
                           </span>
                         </Tooltip>
                       </Grid>

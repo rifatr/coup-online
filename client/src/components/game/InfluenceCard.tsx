@@ -1,7 +1,7 @@
-import { Grid, Paper, Typography, useTheme } from "@mui/material"
+import { Box, Paper, Typography, useTheme } from "@mui/material"
 import { Influences } from '@shared'
-import InfluenceIcon from "../icons/InfluenceIcon"
 import { useTranslationContext } from "../../contexts/TranslationsContext"
+import influenceImages from "../../helpers/influenceImages"
 
 function InfluenceCard({ influence }: {
   influence: Influences
@@ -13,24 +13,19 @@ function InfluenceCard({ influence }: {
     <Paper sx={{
       color: 'white',
       textAlign: 'center',
-      alignContent: 'center',
       background: influence ? influenceColors[influence] : 'rgba(120, 120, 120, 0.5)',
       borderRadius: '0.5rem',
-      p: 2
+      overflow: 'hidden',
     }}>
-      <Grid container flexWrap="nowrap" spacing={1} justifyContent="center" alignItems="center">
-        <Grid>
-          <InfluenceIcon influence={influence} />
-        </Grid>
-        <Grid>
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: 'bold', fontSize: '1.2rem' }}
-          >
-            {t(influence)}
-          </Typography>
-        </Grid>
-      </Grid>
+      <Box
+        component="img"
+        src={influenceImages[influence]}
+        alt={influence}
+        sx={{ width: '100%', display: 'block', objectFit: 'cover' }}
+      />
+      <Typography variant="h6" sx={{ fontWeight: 'bold', fontSize: '1.2rem', py: 1 }}>
+        {t(influence)}
+      </Typography>
     </Paper>
   )
 }
