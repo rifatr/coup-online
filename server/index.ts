@@ -1,4 +1,5 @@
 import http from 'node:http'
+import path from 'node:path'
 import express, { NextFunction, Request, Response } from 'express'
 import { json } from 'body-parser'
 import cors from 'cors'
@@ -601,6 +602,13 @@ getObjectEntries(eventHandlers).forEach(([event, { express, handler, joiSchema }
   app[express.method](`/${event}`, express.validator(joiSchema), (req, res) => {
     return responseHandler(event, handler)(res, express.parseParams(req))
   })
+})
+
+// Serve client static files in production
+const clientBuildPath = process.env.CLIENT_BUILD_PATH || path.resolve(__dirname, '..', '..', 'client', 'build')
+app.use(express.static(clientBuildPath))
+app.get('{*path}', (req: Request, res: Response) => {
+  res.sendFile(path.join(clientBuildPath, 'index.html'))
 })
 
 // Express error handling middleware

@@ -1,0 +1,28 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8008:8008"
+    environment:
+      - EXPRESS_PORT=8008
+      - REDIS_CONNECTION_STRING=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+
+volumes:
+  redis-data:

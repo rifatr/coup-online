@@ -141,3 +141,7 @@ Open http://localhost:3000 in your browser once both are running.
 - **Use `pnpm`, not `npm`** — running `npm install` in the client will fail due to a local path dependency constraint in npm v11+
 - **Build shared first** — if you edit any file under `shared/`, run `cd shared && pnpm build` to recompile before the changes are picked up
 - **Redis is mandatory** — the server will crash on startup without a valid `REDIS_CONNECTION_STRING`
+
+## Production Deployment
+
+See [DEPLOY.md](./DEPLOY.md) for Docker deployment instructions.
