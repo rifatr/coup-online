@@ -1,18 +1,21 @@
 import { playerIdStorageKey } from './localStorageKeys'
 import { PublicGameState, PublicPlayer } from '@shared'
 
+export const generateId = () =>
+  globalThis.crypto?.randomUUID
+    ? globalThis.crypto.randomUUID()
+    : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = Math.random() * 16 | 0
+        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
+      })
+
 export const getPlayerId = () => {
   const existingPlayerId = localStorage.getItem(playerIdStorageKey)
   if (existingPlayerId) {
     return existingPlayerId
   }
 
-  const playerId = globalThis.crypto?.randomUUID
-    ? globalThis.crypto.randomUUID()
-    : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
-        const r = Math.random() * 16 | 0
-        return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16)
-      })
+  const playerId = generateId()
   localStorage.setItem(playerIdStorageKey, playerId)
   return playerId
 }

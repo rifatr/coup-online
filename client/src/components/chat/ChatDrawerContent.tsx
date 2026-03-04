@@ -6,7 +6,7 @@ import { Send } from '@mui/icons-material'
 import { Box, TextField } from '@mui/material'
 import useGameMutation from '../../hooks/useGameMutation'
 import { PlayerActions } from '@shared'
-import { getPlayerId } from '../../helpers/players'
+import { generateId, getPlayerId } from '../../helpers/players'
 import { useGameStateContext } from '../../contexts/GameStateContext'
 import { getLatestReadMessageIdStorageKey } from '../../helpers/localStorageKeys'
 
@@ -81,7 +81,7 @@ export default function ChatDrawerContent({
             value={pendingMessageText}
             onChange={(event) => {
               setPendingMessageText(event.target.value)
-              setPendingMessageId(crypto.randomUUID())
+              setPendingMessageId(generateId())
             }}
             onKeyDown={(event) => {
               if (sendEnabled && event.key === 'Enter') {
