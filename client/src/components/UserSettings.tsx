@@ -59,15 +59,6 @@ function UserSettings() {
             <Grid height={rowHeight} alignContent="center" sx={{ whiteSpace: 'nowrap' }}>
               <Typography component="span" sx={{ mr: 2 }}>{t('language')}:</Typography>
               <LanguageSelector />
-              <Tooltip title={t('reportIncorrectTranslation')}>
-                <IconButton
-                  sx={{ ml: 1 }}
-                  href='https://github.com/fueanta/coup-online/issues/new?template=incorrect_translation.md'
-                  target="_blank"
-                >
-                  <Feedback />
-                </IconButton>
-              </Tooltip>
             </Grid>
             {roomId && (
               <Grid height={rowHeight} alignContent="center">

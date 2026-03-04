@@ -1,6 +1,5 @@
 import { Button, Grid } from "@mui/material"
 import { useNavigate } from "react-router"
-import GitHubLinks from "../GitHubLinks"
 import { useTranslationContext } from "../../contexts/TranslationsContext"
 import { AddCircle, Gavel, GroupAdd } from "@mui/icons-material"
 import CoupTypography from '../utilities/CoupTypography'
@@ -48,7 +47,6 @@ function Home({ setRulesOpen }: Readonly<HomeProps>) {
           startIcon={<GroupAdd />}
         >{t('joinExistingGame')}</Button>
       </Grid>
-      <GitHubLinks />
     </>
   )
 }
