@@ -2,8 +2,12 @@ import { useMemo } from "react"
 import { Box, DialogContent, DialogContentText, Divider, Typography, useTheme } from "@mui/material"
 import { Group } from "@mui/icons-material"
 import { ActionAttributes, Actions, Influences } from '@shared'
-import InfluenceIcon from "../icons/InfluenceIcon"
 import { useTranslationContext } from "../../contexts/TranslationsContext"
+import ambassadorImg from '../../assets/ambassador.png'
+import assassinImg from '../../assets/assassin.jpg'
+import captainImg from '../../assets/captainV2.png'
+import contessaImg from '../../assets/contessa.png'
+import dukeImg from '../../assets/duke.png'
 import './Rules.css'
 
 export default function RulesDrawerContent() {
@@ -20,6 +24,14 @@ export default function RulesDrawerContent() {
       [action, <Typography component="span" fontSize="large" fontWeight='bold' color={influenceRequired as Influences}>{t(action as Actions)}</Typography>]
     )
   ), [t])
+
+  const influenceImgMap: Record<Influences, string> = {
+    [Influences.Ambassador]: ambassadorImg,
+    [Influences.Assassin]: assassinImg,
+    [Influences.Captain]: captainImg,
+    [Influences.Contessa]: contessaImg,
+    [Influences.Duke]: dukeImg
+  }
 
   const anyIndicator = <><Group sx={{ mb: -1 }} /><br /><span style={{ verticalAlign: 'middle' }}>{` ${t('anyone')}`}</span></>
 
@@ -63,19 +75,9 @@ export default function RulesDrawerContent() {
                   {t('killAnInfluence')}
                 </td>
               </tr>
-              <tr style={{ background: actionColors[Actions.Coup] }}>
-                <td>{anyIndicator}</td>
-                <td>
-                  {t(Actions.Revive)}
-                  <br />
-                  {t('payCoins', { count: 10 })}
-                  <br />
-                  {t('reviveAnInfluence')}
-                </td>
-              </tr>
               <tr style={{ background: influenceColors[Influences.Duke] }}>
                 <td>
-                  <InfluenceIcon influence={Influences.Duke} />
+                  <img src={influenceImgMap[Influences.Duke]} style={{ marginTop: 10, width: 50, height: 80, borderRadius: 4 }} />
                   <br />
                   {t(Influences.Duke)}
                 </td>
@@ -89,7 +91,7 @@ export default function RulesDrawerContent() {
               </tr>
               <tr style={{ background: influenceColors[Influences.Assassin] }}>
                 <td>
-                  <InfluenceIcon influence={Influences.Assassin} />
+                  <img src={influenceImgMap[Influences.Assassin]} style={{ marginTop: 10, width: 50, height: 80, borderRadius: 4 }} />
                   <br />
                   {t(Influences.Assassin)}
                 </td>
@@ -103,7 +105,7 @@ export default function RulesDrawerContent() {
               </tr>
               <tr style={{ background: influenceColors[Influences.Ambassador] }}>
                 <td>
-                  <InfluenceIcon influence={Influences.Ambassador} />
+                  <img src={influenceImgMap[Influences.Ambassador]} style={{ marginTop: 10, width: 50, height: 80, borderRadius: 4 }} />
                   <br />
                   {t(Influences.Ambassador)}
                 </td>
@@ -117,7 +119,7 @@ export default function RulesDrawerContent() {
               </tr>
               <tr style={{ background: influenceColors[Influences.Captain] }}>
                 <td>
-                  <InfluenceIcon influence={Influences.Captain} />
+                  <img src={influenceImgMap[Influences.Captain]} style={{ marginTop: 10, width: 50, height: 80, borderRadius: 4 }} />
                   <br />
                   {t(Influences.Captain)}
                 </td>
@@ -131,7 +133,7 @@ export default function RulesDrawerContent() {
               </tr>
               <tr style={{ background: influenceColors[Influences.Contessa] }}>
                 <td>
-                  <InfluenceIcon influence={Influences.Contessa} />
+                  <img src={influenceImgMap[Influences.Contessa]} style={{ marginTop: 10, width: 50, height: 80, borderRadius: 4 }} />
                   <br />
                   {t(Influences.Contessa)}
                 </td>
@@ -165,7 +167,6 @@ export default function RulesDrawerContent() {
             <li>{actionText[Actions.Income]}: {t('rulesIncome')}</li>
             <li>{actionText[Actions.ForeignAid]}: {t('rulesForeignAid')}</li>
             <li>{actionText[Actions.Coup]}: {t('rulesCoup')}</li>
-            <li>{actionText[Actions.Revive]}: {t('rulesRevive')}</li>
             <li>{actionText[Actions.Tax]}: {t('rulesTax')}</li>
             <li>{actionText[Actions.Assassinate]}: {t('rulesAssassinate')}</li>
             <li>{actionText[Actions.Steal]}: {t('rulesSteal')}</li>
