@@ -3,7 +3,6 @@ import { Box, Button, Dialog, DialogActions, DialogContent, DialogTitle, Grid, I
 import { CancelOutlined, CheckCircle, Settings } from "@mui/icons-material"
 import { useWebSocketContext } from "../contexts/WebSocketContext"
 import { useSearchParams } from "react-router"
-import LanguageSelector from "./LanguageSelector"
 import { useTranslationContext } from "../contexts/TranslationsContext"
 import { useUserSettingsContext } from "../contexts/UserSettingsContext"
 import { getShowImageLabel } from '../helpers/easterEggs'
@@ -56,10 +55,19 @@ function UserSettings() {
         </DialogTitle>
         <DialogContent>
           <Grid container spacing={3} direction="column">
-            <Grid height={rowHeight} alignContent="center" sx={{ whiteSpace: 'nowrap' }}>
+            {/* <Grid height={rowHeight} alignContent="center" sx={{ whiteSpace: 'nowrap' }}>
               <Typography component="span" sx={{ mr: 2 }}>{t('language')}:</Typography>
               <LanguageSelector />
-            </Grid>
+              <Tooltip title={t('reportIncorrectTranslation')}>
+                <IconButton
+                  sx={{ ml: 1 }}
+                  href='https://github.com/lounsbrough/coup-online/issues/new?template=incorrect_translation.md'
+                  target="_blank"
+                >
+                  <Feedback />
+                </IconButton>
+              </Tooltip>
+            </Grid> */}
             {roomId && (
               <Grid height={rowHeight} alignContent="center">
                 <Typography component="span" sx={{ mr: 1 }}>
