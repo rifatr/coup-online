@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Route, Routes, Link as RouterLink } from 'react-router'
-import { Box, Button, Link, Typography, useTheme } from '@mui/material'
+import { Box, Link, Typography, useTheme } from '@mui/material'
 import JoinGame from './pages/JoinGame'
 import CreateGame from './pages/CreateGame'
 import Home from './pages/Home'
@@ -84,30 +84,20 @@ function App() {
               display: 'flex',
               flexDirection: 'row',
               alignItems: 'center',
-              justifyContent: 'center',
-              gap: '2rem',
+              justifyContent: 'space-between',
+              padding: '0 1rem',
               background: theme.palette.mode === 'dark'
                 ? 'rgba(0, 0, 0, 0.4)'
                 : showBackgroundImage ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.1)',
               backdropFilter: 'blur(5px)'
             }}>
-              <Box sx={{ whiteSpace: 'nowrap' }}>
-                <Link component={RouterLink} to={'/'}>
-                  <Button
-                    size='large'
-                    color='primary'
-                    startIcon={<Logo height='32px' />}
-                  >
-                    <Typography component="span" sx={{
-                      fontSize: '2rem'
-                    }}
-                    >
-                      {t('title')}
-                    </Typography>
-                  </Button>
-                </Link>
-                <UserSettings />
-              </Box>
+              <Link component={RouterLink} to={'/'} sx={{ display: 'flex', alignItems: 'center' }}>
+                <Logo height='32px' />
+              </Link>
+              <Typography component="span" sx={{ fontSize: '2rem' }}>
+                {t('title')}
+              </Typography>
+              <UserSettings />
             </header>
             <Routes>
               <Route path="/">
