@@ -1,0 +1,39 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  server:
+    image: ghcr.io/fueanta/coup-online:latest
+    restart: unless-stopped
+    ports:
+      - "8008:8008"
+    environment:
+      - EXPRESS_PORT=8008
+      - REDIS_CONNECTION_STRING=redis://redis:6379
+    depends_on:
+      redis:
+        condition: service_healthy
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${HOME}/.docker/config.json:/config.json
+    command: --interval 180 --cleanup --label-enable
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=180
+      - DOCKER_API_VERSION=1.44
+
+volumes:
+  redis-data:
