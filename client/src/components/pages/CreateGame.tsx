@@ -115,7 +115,7 @@ function CreateGame() {
               />
             </Box>
           </Grid>
-          <Grid sx={{ maxWidth: '300px', width: '90%' }}>
+          {/* <Grid sx={{ maxWidth: '300px', width: '90%' }}>
             <Box mt={2}>
               <CoupTypography component="span" mt={2} addTextShadow>
                 {t('allowRevive')}:
@@ -128,7 +128,7 @@ function CreateGame() {
                 slotProps={{ input: { 'aria-label': 'controlled' } }}
               />
             </Box>
-          </Grid>
+          </Grid> */}
           <Grid sx={{ maxWidth: '300px', width: '90%' }}>
             <Box mt={2}>
               <CoupTypography component="span" mt={2} addTextShadow>
