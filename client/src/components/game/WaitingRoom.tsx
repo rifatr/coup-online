@@ -27,6 +27,33 @@ function WaitingRoom() {
     roomId: string, playerId: string
   }>({ action: PlayerActions.startGame })
 
+  const isDark = theme.palette.mode === 'dark'
+
+  const buttonBase = {
+    width: 300,
+    py: 1.8,
+    fontSize: '1.05rem',
+    fontWeight: 700,
+    letterSpacing: '0.5px',
+    borderRadius: '16px',
+    textTransform: 'none' as const,
+    position: 'relative' as const,
+    overflow: 'hidden',
+    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: '-100%',
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
+      transition: 'left 0.5s ease',
+    },
+    '&:hover::before': { left: '100%' },
+    '&:active': { transform: 'scale(0.97)' },
+  }
+
   if (!gameState) {
     return null
   }
@@ -54,7 +81,6 @@ function WaitingRoom() {
         </Grid>
         <Grid>
           <Button
-            variant="contained"
             startIcon={<ContentCopy />}
             onClick={() => {
               navigator.clipboard.writeText(inviteLink)
@@ -64,6 +90,27 @@ function WaitingRoom() {
                 severity: 'success'
               })
             }}
+            sx={{
+              ...buttonBase,
+              background: isDark
+                ? 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.12) 100%)'
+                : 'linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.07) 100%)',
+              color: theme.palette.text.primary,
+              border: `1.5px solid ${isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.12)'}`,
+              backdropFilter: 'blur(12px)',
+              boxShadow: isDark
+                ? '0 4px 16px rgba(0,0,0,0.25)'
+                : '0 4px 16px rgba(0,0,0,0.06)',
+              '&:hover': {
+                transform: 'translateY(-3px)',
+                background: isDark
+                  ? 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.18) 100%)'
+                  : 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.1) 100%)',
+                boxShadow: isDark
+                  ? '0 8px 28px rgba(0,0,0,0.4)'
+                  : '0 8px 28px rgba(0,0,0,0.1)',
+              },
+            }}
           >
             {(t('copyInviteLink'))}
           </Button>
@@ -71,12 +118,30 @@ function WaitingRoom() {
         {!!gameState.selfPlayer && (
           <Grid>
             <Button
-              variant="contained"
               startIcon={<Bot />}
               onClick={() => {
                 setAddAiPlayerDialogOpen(true)
               }}
               disabled={gameState.players.length === MAX_PLAYER_COUNT}
+              sx={{
+                ...buttonBase,
+                background: isDark
+                  ? 'linear-gradient(135deg, #4a148c 0%, #6a1b9a 50%, #8e24aa 100%)'
+                  : 'linear-gradient(135deg, #6a1b9a 0%, #8e24aa 50%, #ab47bc 100%)',
+                color: '#fff',
+                boxShadow: '0 6px 24px rgba(106,27,154,0.35)',
+                '&:hover': {
+                  transform: 'translateY(-3px)',
+                  boxShadow: '0 10px 36px rgba(106,27,154,0.5)',
+                },
+                '&:disabled': {
+                  background: isDark
+                    ? 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)'
+                    : 'linear-gradient(135deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.12) 100%)',
+                  color: theme.palette.text.disabled,
+                  boxShadow: 'none',
+                },
+              }}
             >
               {(t('addAiPlayer'))}
             </Button>
@@ -85,7 +150,6 @@ function WaitingRoom() {
         {!!gameState.selfPlayer && (
           <Grid>
             <Button
-              variant='contained'
               onClick={() => {
                 trigger({
                   roomId: gameState.roomId,
@@ -95,6 +159,25 @@ function WaitingRoom() {
               disabled={gameState.players.length < 2}
               loading={isMutating}
               startIcon={<PlayArrow />}
+              sx={{
+                ...buttonBase,
+                background: isDark
+                  ? 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%)'
+                  : 'linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #66bb6a 100%)',
+                color: '#fff',
+                boxShadow: '0 6px 24px rgba(46,125,50,0.35)',
+                '&:hover': {
+                  transform: 'translateY(-3px)',
+                  boxShadow: '0 10px 36px rgba(46,125,50,0.5)',
+                },
+                '&:disabled': {
+                  background: isDark
+                    ? 'linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.08) 100%)'
+                    : 'linear-gradient(135deg, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.12) 100%)',
+                  color: theme.palette.text.disabled,
+                  boxShadow: 'none',
+                },
+              }}
             >
               {(t('startGame'))}
             </Button>
@@ -125,11 +208,22 @@ function WaitingRoom() {
         {!gameState.selfPlayer && (
           <Grid>
             <Button
-              variant='contained'
               onClick={() => {
                 navigate(`/join-game?roomId=${gameState.roomId}`)
               }}
               startIcon={<GroupAdd />}
+              sx={{
+                ...buttonBase,
+                background: isDark
+                  ? 'linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%)'
+                  : 'linear-gradient(135deg, #283593 0%, #3949ab 50%, #5c6bc0 100%)',
+                color: '#fff',
+                boxShadow: '0 6px 24px rgba(40,53,147,0.35)',
+                '&:hover': {
+                  transform: 'translateY(-3px)',
+                  boxShadow: '0 10px 36px rgba(40,53,147,0.5)',
+                },
+              }}
             >
               {(t('joinGame'))}
             </Button>
