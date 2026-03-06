@@ -48,7 +48,7 @@ function GrowingButton({ sx, ...props }: ButtonProps) {
           '&:active': {
             transform: 'scale(0.96)',
           },
-          ...sx,
+          ...sx as object,
         }}
       >
         {props.children}

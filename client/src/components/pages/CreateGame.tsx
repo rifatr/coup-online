@@ -9,7 +9,6 @@ import {
   Switch,
   TextField,
   Typography,
-  useTheme,
 } from '@mui/material'
 import { AddCircle, Person } from '@mui/icons-material'
 import { Link as RouterLink, useNavigate } from 'react-router'
@@ -30,6 +29,7 @@ import {
 } from '../../helpers/localStorageKeys'
 import CoupTypography from '../utilities/CoupTypography'
 import { usePersistedState } from '../../hooks/usePersistedState'
+import { useButtonStyles } from '../../hooks/useButtonStyles'
 
 function CreateGame() {
   const [playerName, setPlayerName] = useState('')
@@ -39,8 +39,7 @@ function CreateGame() {
   const [speedRoundSeconds, setSpeedRoundSeconds] = usePersistedState<number>(speedRoundSecondsStorageKey, 10)
   const navigate = useNavigate()
   const { t } = useTranslationContext()
-  const theme = useTheme()
-  const isDark = theme.palette.mode === 'dark'
+  const btn = useButtonStyles()
 
   const navigateToRoom = useCallback(
     (gameState: DehydratedPublicGameState) => {
@@ -173,40 +172,7 @@ function CreateGame() {
             type="submit"
             loading={isMutating}
             startIcon={<AddCircle />}
-            sx={{
-              mt: 5,
-              width: 300,
-              py: 1.8,
-              fontSize: '1.05rem',
-              fontWeight: 700,
-              letterSpacing: '0.5px',
-              borderRadius: '16px',
-              textTransform: 'none',
-              position: 'relative',
-              overflow: 'hidden',
-              background: isDark
-                ? 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%)'
-                : 'linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #66bb6a 100%)',
-              color: '#fff',
-              boxShadow: '0 6px 24px rgba(46,125,50,0.35)',
-              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-              '&::before': {
-                content: '""',
-                position: 'absolute',
-                top: 0,
-                left: '-100%',
-                width: '100%',
-                height: '100%',
-                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
-                transition: 'left 0.5s ease',
-              },
-              '&:hover::before': { left: '100%' },
-              '&:hover': {
-                transform: 'translateY(-3px)',
-                boxShadow: '0 10px 36px rgba(46,125,50,0.5)',
-              },
-              '&:active': { transform: 'scale(0.97)' },
-            }}
+            sx={{ mt: 5, ...btn.primary() }}
           >
             {t('createGame')}
           </Button>

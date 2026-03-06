@@ -1,8 +1,9 @@
-import { Box, Button, useTheme } from "@mui/material"
+import { Box, Button } from "@mui/material"
 import { useNavigate } from "react-router"
 import { useTranslationContext } from "../../contexts/TranslationsContext"
 import { AddCircle, Gavel, GroupAdd } from "@mui/icons-material"
 import CoupTypography from '../utilities/CoupTypography'
+import { useButtonStyles } from "../../hooks/useButtonStyles"
 
 interface HomeProps {
   setRulesOpen: (open: boolean) => void
@@ -11,37 +12,7 @@ interface HomeProps {
 function Home({ setRulesOpen }: Readonly<HomeProps>) {
   const navigate = useNavigate()
   const { t } = useTranslationContext()
-  const theme = useTheme()
-  const isDark = theme.palette.mode === 'dark'
-
-  const buttonBase = {
-    width: 300,
-    py: 1.8,
-    fontSize: '1.05rem',
-    fontWeight: 700,
-    letterSpacing: '0.5px',
-    borderRadius: '16px',
-    textTransform: 'none' as const,
-    position: 'relative' as const,
-    overflow: 'hidden',
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-    '&::before': {
-      content: '""',
-      position: 'absolute',
-      top: 0,
-      left: '-100%',
-      width: '100%',
-      height: '100%',
-      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent)',
-      transition: 'left 0.5s ease',
-    },
-    '&:hover::before': {
-      left: '100%',
-    },
-    '&:active': {
-      transform: 'scale(0.97)',
-    },
-  }
+  const btn = useButtonStyles()
 
   return (
     <Box sx={{
@@ -65,59 +36,17 @@ function Home({ setRulesOpen }: Readonly<HomeProps>) {
         gap: 2.5,
       }}>
         <Button
-          sx={{
-            ...buttonBase,
-            background: isDark
-              ? 'linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #43a047 100%)'
-              : 'linear-gradient(135deg, #2e7d32 0%, #43a047 50%, #66bb6a 100%)',
-            color: '#fff',
-            boxShadow: '0 6px 24px rgba(46,125,50,0.35)',
-            '&:hover': {
-              transform: 'translateY(-3px)',
-              boxShadow: '0 10px 36px rgba(46,125,50,0.5)',
-            },
-          }}
+          sx={btn.primary()}
           onClick={() => { navigate(`/create-game`) }}
           startIcon={<AddCircle />}
         >{t('createNewGame')}</Button>
         <Button
-          sx={{
-            ...buttonBase,
-            background: isDark
-              ? 'linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%)'
-              : 'linear-gradient(135deg, #283593 0%, #3949ab 50%, #5c6bc0 100%)',
-            color: '#fff',
-            boxShadow: '0 6px 24px rgba(40,53,147,0.35)',
-            '&:hover': {
-              transform: 'translateY(-3px)',
-              boxShadow: '0 10px 36px rgba(40,53,147,0.5)',
-            },
-          }}
+          sx={btn.secondary()}
           onClick={() => { navigate(`/join-game`) }}
           startIcon={<GroupAdd />}
         >{t('joinExistingGame')}</Button>
         <Button
-          sx={{
-            ...buttonBase,
-            background: isDark
-              ? 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.12) 100%)'
-              : 'linear-gradient(135deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.07) 100%)',
-            color: theme.palette.text.primary,
-            border: `1.5px solid ${isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.12)'}`,
-            backdropFilter: 'blur(12px)',
-            boxShadow: isDark
-              ? '0 4px 16px rgba(0,0,0,0.25)'
-              : '0 4px 16px rgba(0,0,0,0.06)',
-            '&:hover': {
-              transform: 'translateY(-3px)',
-              background: isDark
-                ? 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.18) 100%)'
-                : 'linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.1) 100%)',
-              boxShadow: isDark
-                ? '0 8px 28px rgba(0,0,0,0.4)'
-                : '0 8px 28px rgba(0,0,0,0.1)',
-            },
-          }}
+          sx={btn.glass()}
           onClick={() => setRulesOpen(true)}
           startIcon={<Gavel />}
         >{t('learnToPlay')}</Button>
