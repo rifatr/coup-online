@@ -145,3 +145,118 @@ Open http://localhost:3000 in your browser once both are running.
 ## Production Deployment
 
 See [DEPLOY.md](./DEPLOY.md) for Docker deployment instructions.
+
+## Project Architecture
+
+  This is a real-time multiplayer card game (Coup) built as a monorepo with 3 packages:
+
+  coup-online/
+  ├── client/          → React frontend
+  ├── server/          → Express + Socket.IO backend
+  ├── shared/          → Shared TypeScript types, game logic, helpers
+  ├── docker-compose.yml
+  └── docker-compose.server.yml
+
+  ---
+  1. shared/ — Shared Library
+
+  The glue between client and server. Compiled to JS via tsc and imported by both sides.
+
+  - types/game.ts — All core TypeScript types: Actions, Influences, Responses, PlayerActions, ServerEvents,
+  GameSettings, PublicGameState, etc. This is the single source of truth for game enums and interfaces.
+  - game/logic.ts — Shared game logic used by both client and server.
+  - helpers/ — Utility functions like dehydratePublicGameState (serializes game state for transport).
+  - i18n/ — AvailableLanguageCode enum defining supported languages.
+
+  ---
+  2. server/ — Backend (Express + Socket.IO + Redis)
+
+  Tech stack: Node.js, Express 5, Socket.IO 4, Redis 7, Joi validation, TypeScript
+
+  How it works:
+
+  - index.ts — The main entry point (~630 lines). Sets up:
+    - Express HTTP server on port 8008
+    - Socket.IO WebSocket server on top of it (for real-time gameplay)
+    - Dual API — Every game action is exposed as both a REST endpoint AND a Socket.IO event, using a shared
+  eventHandlers map
+  - src/game/actionHandlers.ts — All game mutation handlers:
+    - createGameHandler, joinGameHandler, startGameHandler
+    - actionHandler (Income, ForeignAid, Coup, Tax, Assassinate, Steal, Exchange)
+    - actionResponseHandler, blockResponseHandler (challenge/block flows)
+    - loseInfluencesHandler, sendChatMessageHandler, addAiPlayerHandler, etc.
+  - src/utilities/gameState.ts — Reads/writes game state to Redis. Each game room has its state stored in Redis,
+  enabling persistence and multi-instance scaling.
+  - src/utilities/errors.ts — Custom error class GameMutationInputError with i18n-aware error messages.
+  - src/i18n/translations.ts — Server-side translations for error messages.
+
+  Real-time flow:
+
+  1. Client connects via Socket.IO
+  2. Client emits a PlayerActions event (e.g., action, actionResponse)
+  3. Server validates with Joi, runs the handler, mutates state in Redis
+  4. Server broadcasts updated PublicGameState to all sockets in the room
+  5. Each player gets their own view (hidden cards are only visible to the owning player)
+
+  Deployment:
+
+  - Docker Compose runs Redis 7 (Alpine) + the Node server
+  - Server also serves the client's static build in production (express.static)
+  - Has a vercel.json for Vercel deployment support
+
+  ---
+  3. client/ — Frontend (React + Vite + MUI)
+
+  Tech stack: React 19, Vite 7, MUI 7 (Material UI), Socket.IO Client, TypeScript, React Router
+
+  Key directories:
+
+  - src/components/ — UI components (game board, rules drawer, language selector, icons, chat, etc.)
+  - src/contexts/ — React contexts:
+    - TranslationsContext.tsx — i18n system with runtime language switching (currently defaults to bn-BD)
+    - Likely a game state context for managing Socket.IO connection and state
+  - src/hooks/ — Custom hooks like usePersistedState (localStorage-backed state)
+  - src/i18n/translations.ts — All UI translations (8 languages including Bangla)
+  - src/assets/ — Character card images (ambassador, assassin, captain, contessa, duke)
+  - src/helpers/ — Client utilities (localStorage keys, etc.)
+
+  How the client works:
+
+  1. Vite serves the app with index.html as entry, loading src/index.tsx
+  2. React Router handles navigation (create game, join game, game room)
+  3. Socket.IO client connects to the server
+  4. On every gameStateChanged event, the UI re-renders with the latest game state
+  5. Player actions (Income, Coup, Steal, etc.) are emitted via Socket.IO
+  6. MUI provides the component library (dialogs, buttons, typography, theming)
+  7. @vercel/analytics tracks usage in production
+
+  Testing:
+
+  - Unit tests: Vitest + Testing Library
+  - E2E tests: Cypress (cypress/ directory)
+
+  ---
+  4. Data Flow Summary
+
+  ┌──────────┐   Socket.IO    ┌──────────┐    Read/Write     ┌───────┐
+  │  Client  │ ◄────────────► │  Server   │ ◄──────────────► │ Redis │
+  │  (React) │   WebSocket    │ (Express) │   Game State     │  (DB) │
+  └──────────┘                └──────────┘                   └───────┘
+        │                           │
+        └── shared types/logic ─────┘
+
+  - Client sends player actions via WebSocket
+  - Server validates input (Joi), applies game logic, stores state in Redis
+  - Server broadcasts the new public game state to all players in the room
+  - Shared package ensures type safety across the boundary
+
+  ---
+  5. Game Features
+
+  - 2-6 players per room
+  - AI opponents with configurable personality (vengefulness, honesty, skepticism)
+  - Real-time in-game chat with emoji reactions and message deletion
+  - QR code for sharing game room links
+  - Speed round timer option
+  - Forfeit with AI replacement
+  - Game reset voting system
