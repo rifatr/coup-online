@@ -72,17 +72,65 @@ function PlayerActionConfirmation({
               onCancel()
             }}
             disabled={isMutating}
+            sx={{
+              py: 1.2,
+              px: 3,
+              fontSize: '0.95rem',
+              fontWeight: 600,
+              borderRadius: '12px',
+              textTransform: 'none',
+              letterSpacing: '0.3px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+              background: theme.palette.mode === 'dark'
+                ? 'linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.12) 100%)'
+                : 'linear-gradient(135deg, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.08) 100%)',
+              color: theme.palette.text.primary,
+              border: `1.5px solid ${theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.12)'}`,
+              backdropFilter: 'blur(12px)',
+              boxShadow: theme.palette.mode === 'dark'
+                ? '0 4px 14px rgba(0,0,0,0.25)'
+                : '0 4px 14px rgba(0,0,0,0.06)',
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: '-100%',
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)',
+                transition: 'left 0.5s ease',
+              },
+              '&:hover::before': { left: '100%' },
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: theme.palette.mode === 'dark'
+                  ? '0 6px 20px rgba(0,0,0,0.4)'
+                  : '0 6px 20px rgba(0,0,0,0.1)',
+              },
+              '&:active': { transform: 'scale(0.96)' },
+            }}
           >
             {t('cancel')}
           </Button>
         </Grid>
         <Grid>
           <Button
-            startIcon={(
-              <Check />
-            )}
+            startIcon={<Check />}
             sx={{
+              py: 1.2,
+              px: 3,
+              fontSize: '0.95rem',
+              fontWeight: 600,
+              borderRadius: '12px',
+              textTransform: 'none',
+              letterSpacing: '0.3px',
+              position: 'relative',
+              overflow: 'hidden',
+              transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
               color: theme.palette.primary.contrastText,
+              boxShadow: '0 4px 14px rgba(46,125,50,0.3)',
               background: isMutating ? undefined : `
                 linear-gradient(
                   to right,
@@ -90,7 +138,23 @@ function PlayerActionConfirmation({
                   ${autoSubmitProgress}%,
                   ${theme.palette.mode === LIGHT_COLOR_MODE ? 'rgba(0, 0, 0, 0.4)' : 'rgba(255, 255, 255, 0.24)'}
                   ${autoSubmitProgress}%
-                ) !important`
+                ) !important`,
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: '-100%',
+                width: '100%',
+                height: '100%',
+                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent)',
+                transition: 'left 0.5s ease',
+              },
+              '&:hover::before': { left: '100%' },
+              '&:hover': {
+                transform: 'translateY(-2px)',
+                boxShadow: '0 6px 20px rgba(46,125,50,0.45)',
+              },
+              '&:active': { transform: 'scale(0.96)' },
             }}
             variant="contained"
             onClick={() => {
