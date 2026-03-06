@@ -35,7 +35,7 @@ const translations = {
     'pt-BR': 'Você não pode bloquear um bloqueio',
   },
   claimedInfluenceAlreadyConfirmed: {
-    'bn-BD': 'দাবি করা প্রভাব ইতিমধ্যে নিশ্চিত হয়েছে',
+    'bn-BD': 'দাবি করা কার্ড ইতিমধ্যে সঠিক নিশ্চিত হয়েছে',
     'de-DE': 'Der beanspruchte Einfluss wurde bereits bestätigt',
     'en-US': 'Claimed influence has already been confirmed',
     'es-MX': 'La influencia reclamada ya ha sido confirmada',
@@ -45,7 +45,7 @@ const translations = {
     'pt-BR': 'A influência reivindicada já foi confirmada',
   },
   claimedInfluenceInvalid: {
-    'bn-BD': 'দাবি করা প্রভাব অবৈধ',
+    'bn-BD': 'দাবি করা কার্ড অবৈধ',
     'de-DE': 'Der beanspruchte Einfluss ist ungültig',
     'en-US': 'Claimed influence is invalid',
     'es-MX': 'La influencia reclamada es inválida',
@@ -55,7 +55,7 @@ const translations = {
     'pt-BR': 'A influência reivindicada é inválida',
   },
   claimedInfluenceRequired: {
-    'bn-BD': 'দাবি করা প্রভাব প্রয়োজন',
+    'bn-BD': 'দাবি করা কার্ড প্রয়োজন',
     'de-DE': 'Der beanspruchte Einfluss ist erforderlich',
     'en-US': 'Claimed influence is required',
     'es-MX': 'Se requiere influencia reclamada',
@@ -75,7 +75,7 @@ const translations = {
     'pt-BR': 'O baralho está vazio',
   },
   everyonePassedWithPendingDecision: {
-    'bn-BD': 'সবাই পাস করেছেন কিন্তু একটি সিদ্ধান্ত এখনও মুলতুবি',
+    'bn-BD': 'সবাই পাস করেছেন কিন্তু একটি সিদ্ধান্ত এখনও পেন্ডিং',
     'de-DE': 'Alle haben gepasst, aber eine Entscheidung steht noch aus',
     'en-US': 'Everyone has passed but a decision is still pending',
     'es-MX': 'Todos han pasado, pero una decisión aún está pendiente',
@@ -215,7 +215,7 @@ const translations = {
     'pt-BR': 'A mensagem não è sua',
   },
   missingInfluence: {
-    'bn-BD': 'আপনার প্রয়োজনীয় প্রভাব নেই',
+    'bn-BD': 'আপনার প্রয়োজনীয় কার্ডটি নেই',
     'de-DE': 'Du hast den erforderlichen Einfluss nicht',
     'en-US': 'You don\'t have the required influence',
     'es-MX': 'No tienes la influencia requerida',
@@ -225,7 +225,7 @@ const translations = {
     'pt-BR': 'Você não tem a influência necessária',
   },
   noDeadInfluences: {
-    'bn-BD': 'কোনো মৃত প্রভাব নেই',
+    'bn-BD': 'কোনো মৃত কার্ড নেই',
     'de-DE': 'Keine toten Einflüsse',
     'en-US': 'No dead influences',
     'es-MX': 'Sin influencias muertas',
@@ -245,7 +245,7 @@ const translations = {
     'pt-BR': 'O jogador não está no jogo',
   },
   playersMustHave2Influences: {
-    'bn-BD': 'খেলোয়াড়দের ঠিক ২টি প্রভাব থাকতে হবে',
+    'bn-BD': 'খেলোয়াড়দের ঠিক ২টি কার্ড থাকতে হবে',
     'de-DE': 'Spieler müssen genau 2 Einflüsse haben',
     'en-US': 'Players must have exactly 2 influences',
     'es-MX': 'Los jugadores deben tener exactamente 2 influencias',
@@ -265,7 +265,7 @@ const translations = {
     'pt-BR': 'Reviver não permitido no jogo',
   },
   roomAlreadyHasPlayer: {
-    'bn-BD': 'কক্ষে ইতিমধ্যে "{{playerName}}" নামের একজন খেলোয়াড় আছেন',
+    'bn-BD': 'রুমে ইতিমধ্যে "{{playerName}}" নামের একজন খেলোয়াড় আছেন',
     'de-DE': 'Der Raum hat bereits einen Spieler namens "{{playerName}}"',
     'en-US': 'Room already has a player named "{{playerName}}"',
     'es-MX': 'La sala ya tiene un jugador llamado "{{playerName}}"',
@@ -275,7 +275,7 @@ const translations = {
     'pt-BR': 'A sala já tem um jogador chamado "{{playerName}}"',
   },
   roomIdAlreadyExists: {
-    'bn-BD': '"{{roomId}}" আইডির কক্ষ ইতিমধ্যে বিদ্যমান',
+    'bn-BD': '"{{roomId}}" আইডির রুম ইতিমধ্যে বিদ্যমান',
     'de-DE': 'Der Raum mit der ID "{{roomId}}" existiert bereits',
     'en-US': 'Room with ID "{{roomId}}" already exists',
     'es-MX': 'La sala con ID "{{roomId}}" ya existe',
@@ -285,8 +285,8 @@ const translations = {
     'pt-BR': 'A sala com ID "{{roomId}}" já existe',
   },
   roomIsFull: {
-    'bn-BD': 'কক্ষ {{roomId}} পূর্ণ',
-    'de-DE': 'Der Raum {{roomId}} ist voll',
+    'bn-BD': 'রুম {{roomId}} পূর্ণ',
+    'de-DE': 'Der Raum {{roomঢ়d}} ist voll',
     'en-US': 'Room {{roomId}} is full',
     'es-MX': 'La sala {{roomId}} está llena',
     'fr-FR': 'La chambre {{roomId}} est pleine',
@@ -295,7 +295,7 @@ const translations = {
     'pt-BR': 'A sala {{roomId}} está cheia',
   },
   roomNotFound: {
-    'bn-BD': "কক্ষ খুঁজে পাওয়া যায়নি",
+    'bn-BD': "রুম খুঁজে পাওয়া যায়নি",
     'de-DE': "Raum nicht gefunden",
     'en-US': "Room not found",
     'es-MX': "Sala no encontrada",
@@ -365,7 +365,7 @@ const translations = {
     'pt-BR': 'Não foi possível determinar o próximo turno do jogador',
   },
   unableToFindPendingAction: {
-    'bn-BD': 'মুলতুবি একশন খুঁজে পাওয়া যাচ্ছে না',
+    'bn-BD': 'পেন্ডিং একশন খুঁজে পাওয়া যাচ্ছে না',
     'de-DE': 'Ausstehende Aktion nicht gefunden',
     'en-US': 'Unable to find pending action',
     'es-MX': 'No se pudo encontrar la acción pendiente',

@@ -201,7 +201,7 @@ const translations: Translations = {
     'pt-BR': 'Ações',
   },
   [Actions.Assassinate]: {
-    'bn-BD': 'ঘার মটানো',
+    'bn-BD': 'ঘার মটকানো',
     'de-DE': 'Attentat',
     'en-US': 'Assassinate',
     'es-MX': 'Asesinar',
@@ -221,7 +221,7 @@ const translations: Translations = {
     'pt-BR': 'Golpe de Estado',
   },
   [Actions.Exchange]: {
-    'bn-BD': 'স্বাদ বদল',
+    'bn-BD': 'স্বাদবদল',
     'de-DE': 'Austausch',
     'en-US': 'Exchange',
     'es-MX': 'Intercambiar',
@@ -442,7 +442,7 @@ const translations: Translations = {
     'pt-BR': 'Escolher uma influência para perder',
   },
   chooseInfluenceToReveal: {
-    'bn-BD': 'প্রকাশের জন্য একটি কার্ড সিলেক্ট করুন',
+    'bn-BD': 'সকলের কাছে প্রকাশের জন্য একটি কার্ড সিলেক্ট করুন',
     'de-DE': 'Wähle eine Einflusskarte, die du aufdecken möchtest',
     'en-US': 'Choose an influence to reveal',
     'es-MX': 'Elegir una influencia para revelar',
@@ -452,7 +452,7 @@ const translations: Translations = {
     'pt-BR': 'Escolher uma influência para revelar',
   },
   chooseInfluencesToKeep: {
-    'bn-BD': 'রাখার জন্য {{count}}টি কার্ড সিলেক্ট করুন',
+    'bn-BD': 'নিজের কাছে রাখার জন্য {{count}}টি কার্ড সিলেক্ট করুন',
     'de-DE':
       'Wähle {{count}} Einflusskarte{{plural[[n]]}}, die du behalten möchtest',
     'en-US': 'Choose {{count}} influence{{plural[[s]]}} to keep',
@@ -543,7 +543,7 @@ const translations: Translations = {
     'pt-BR': 'Conteúdo',
   },
   copyInviteLink: {
-    'bn-BD': 'আমন্ত্রণ লিঙ্ক কপি করুন',
+    'bn-BD': 'ইনভাইট লিঙ্ক কপি করুন',
     'de-DE': 'Einladungslink kopieren',
     'en-US': 'Copy Invite Link',
     'es-MX': 'Copiar Enlace de Invitación',
@@ -634,7 +634,7 @@ const translations: Translations = {
   },
   [EventMessages.ActionConfirm]: {
     [Actions.Assassinate]: {
-      'bn-BD': '{{action[[ঘার মটানো]]}} {{secondaryPlayer}}',
+      'bn-BD': '{{action[[ঘার মটকানো]]}} {{secondaryPlayer}}',
       'de-DE': '{{action[[Attentat]]}} {{secondaryPlayer}}',
       'en-US': '{{action[[Assassinate]]}} {{secondaryPlayer}}',
       'es-MX': '{{action[[Asesinar]]}} {{secondaryPlayer}}',
@@ -654,7 +654,7 @@ const translations: Translations = {
       'pt-BR': '{{action[[Golpear]]}} {{secondaryPlayer}}',
     },
     [Actions.Exchange]: {
-      'bn-BD': '{{action[[স্বাদ বদল]]}} কার্ড',
+      'bn-BD': '{{action[[স্বাদবদল]]}} কার্ড',
       'de-DE': '{{action[[Austausch]]}} von Einflusskarten',
       'en-US': '{{action[[Exchange]]}} influences',
       'es-MX': '{{action[[Intercambiar]]}} influencias',
@@ -717,7 +717,7 @@ const translations: Translations = {
   [EventMessages.ActionPending]: {
     [Actions.Assassinate]: {
       'bn-BD':
-        '{{primaryPlayer}} {{action[[ঘার মটানো]]}} করার চেষ্টা করছে {{secondaryPlayer}}',
+        '{{primaryPlayer}} {{action[[ঘার মটকানো]]}}র চেষ্টা করছে {{secondaryPlayer}} এর',
       'de-DE':
         '{{primaryPlayer}} versucht, {{secondaryPlayer}} zu {{action[[Attentat]]}}',
       'en-US':
@@ -734,7 +734,7 @@ const translations: Translations = {
     },
     [Actions.Exchange]: {
       'bn-BD':
-        '{{primaryPlayer}} {{action[[স্বাদ বদল]]}} করার চেষ্টা করছে কার্ড',
+        '{{primaryPlayer}} {{action[[স্বাদবদল]]}} করার চেষ্টা করছে কার্ড',
       'de-DE':
         '{{primaryPlayer}} versucht, Einflusskarten {{action[[Austausch]]}}',
       'en-US':
@@ -819,7 +819,7 @@ const translations: Translations = {
   },
   [EventMessages.ActionProcessed]: {
     [Actions.Assassinate]: {
-      'bn-BD': '{{primaryPlayer}} {{action[[ঘার মটিয়েছে]]}} {{secondaryPlayer}}',
+      'bn-BD': '{{primaryPlayer}} {{action[[ঘার মটকিয়েছে]]}} {{secondaryPlayer}} এর',
       'de-DE':
         '{{primaryPlayer}} hat {{secondaryPlayer}} {{action[[Attentat]]}}',
       'en-US':
@@ -846,7 +846,7 @@ const translations: Translations = {
       'pt-BR': '{{primaryPlayer}} {{action[[Golpeou]]}} {{secondaryPlayer}}',
     },
     [Actions.Exchange]: {
-      'bn-BD': '{{primaryPlayer}} {{action[[স্বাদ বদল করেছে]]}} কার্ড',
+      'bn-BD': '{{primaryPlayer}} {{action[[স্বাদবদল করেছে]]}} কার্ড',
       'de-DE':
         '{{primaryPlayer}} hat Einflusskarten {{action[[Ausgetauscht]]}}',
       'en-US': '{{primaryPlayer}} {{action[[Exchanged]]}} influences',
@@ -1027,7 +1027,7 @@ const translations: Translations = {
   },
   [EventMessages.PlayerReplacedInfluence]: {
     'bn-BD':
-      '{{primaryPlayer}} তাদের {{primaryInfluence}} প্রকাশ করে প্রতিস্থাপন করেছে',
+      '{{primaryPlayer}} তার {{primaryInfluence}} প্রকাশ করে নতুন কার্ড নিয়েছে',
     'de-DE':
       '{{primaryPlayer}} hat ihre {{primaryInfluence}} aufgedeckt und ersetzt',
     'en-US':
@@ -1130,7 +1130,7 @@ const translations: Translations = {
     'pt-BR': 'Regras Completas',
   },
   gameNotFound: {
-    'bn-BD': 'খেলা পাওয়া যায়নি',
+    'bn-BD': 'খেলা খুঁজে পাওয়া যায়নি',
     'de-DE': 'Spiel nicht gefunden',
     'en-US': 'Game not found',
     'es-MX': 'Juego no encontrado',
@@ -1260,7 +1260,7 @@ const translations: Translations = {
     'pt-BR': 'Info',
   },
   inviteLinkCopied: {
-    'bn-BD': 'আমন্ত্রণ লিঙ্ক কপি করা হয়েছে',
+    'bn-BD': 'ইনভাইট লিঙ্ক কপি করা হয়েছে',
     'de-DE': 'Einladungslink kopiert',
     'en-US': 'Invite link copied',
     'es-MX': 'Enlace de invitación copiado',
@@ -1498,7 +1498,7 @@ const translations: Translations = {
     'pt-BR': '{{primaryPlayer}} Vence!',
   },
   random: {
-    'bn-BD': 'এলোমেলো',
+    'bn-BD': 'র‍্যান্ডম',
     'de-DE': 'Zufällig',
     'en-US': 'Random',
     'es-MX': 'Aleatorio',
@@ -1528,7 +1528,7 @@ const translations: Translations = {
     'pt-BR': 'Reportar Tradução Incorreta',
   },
   requestFeature: {
-    'bn-BD': 'বৈশিষ্ট্যের অনুরোধ করুন',
+    'bn-BD': 'ফিচার অনুরোধ করুন',
     'de-DE': 'Funktion anfordern',
     'en-US': 'Request Feature',
     'es-MX': 'Solicitar Función',
@@ -1608,7 +1608,7 @@ const translations: Translations = {
     'pt-BR': 'Reviver está habilitado',
   },
   room: {
-    'bn-BD': 'কক্ষ',
+    'bn-BD': 'রুম',
     'de-DE': 'Raum',
     'en-US': 'Room',
     'es-MX': 'Sala',
@@ -1628,7 +1628,7 @@ const translations: Translations = {
     'pt-BR': 'Regras',
   },
   rulesActions: {
-    'bn-BD': 'খেলোয়াড়রা পালাক্রমে এই উপলব্ধ একশনগুলির মধ্যে একটি করেন:',
+    'bn-BD': 'খেলোয়াড়রা পালাক্রমে এই একশনগুলির মধ্যে একটি করেন:',
     'de-DE':
       'Die Spieler führen abwechselnd eine der folgenden verfügbaren Aktionen aus:',
     'en-US': 'Players take turns performing one of these available actions:',
@@ -1644,7 +1644,7 @@ const translations: Translations = {
   },
   rulesAmbassador: {
     'bn-BD':
-      'ডেক থেকে নতুন কার্ডের সাথে আপনার কার্ড স্বাদ বদল করতে এবং ডাকাতির চেষ্টা ব্লক করতে পারেন।',
+      'ডেক থেকে নতুন কার্ডের সাথে আপনার কার্ড বদল বা পরিবর্তন করতে এবং ডাকাতির চেষ্টা ব্লক করতে পারেন।',
     'de-DE':
       'Kann zwei Münzen von einem anderen Spieler stehlen und Blockieren von Diebstahlversuchen.',
     'en-US':
@@ -2191,7 +2191,7 @@ const translations: Translations = {
     'pt-BR': 'Bem-vindo ao Coup!',
   },
   whatIsBotsName: {
-    'bn-BD': 'বটের নাম কী?',
+    'bn-BD': 'AI এর নাম কী?',
     'de-DE': 'Wie heißt der Bot?',
     'en-US': 'What is its name?',
     'es-MX': '¿Cuál es su nombre?',
@@ -2238,21 +2238,36 @@ export const snarkyDeadComments: { [key in AvailableLanguageCode]: string[] } =
     `প্রতিটি পরাজয় একটি শেখার সুযোগ।`,
     `আপনি সর্বোচ্চ চেষ্টা করেছিলেন।`,
     `এই পরাজয়কে আপনাকে দমিয়ে দিতে দেবেন না।`,
-    `চিন্তা করবেন না, এটা আপনার দোষ নয়।`,
-    `আপনি হারার ব্যাপারে সত্যিই স্বাভাবিক।`,
-    `হয়তো আপনার অন্য কোনো খেলা চেষ্টা করা উচিত।`,
-    `আমি ভাবতে শুরু করেছি যে আপনি আসলে হারার চেষ্টা করছেন।`,
-    `আপনি সর্বশেষ স্থানে আসার দক্ষতাকে নিখুঁত করেছেন।`,
-    `আপনি ব্যর্থতার একজন সত্যিকারের চ্যাম্পিয়ন।`,
-    `আপনি হারাকে সহজ দেখাতে সক্ষম হয়েছেন।`,
-    `আপনি এত খারাপ যে আপনি প্রায় ভালো হওয়ার মতো খারাপ।`,
-    `মনে হচ্ছে এখন থেকে আপনাকে একা সলিটেয়ার খেলতে হবে।`,
-    `আপনি জন্মগত হারা খেলোয়াড়।`,
-    `আপনি হারায় এত পারদর্শী যে আপনার একটি ট্রফি পাওয়া উচিত।`,
-    `আপনি সবচেয়ে খারাপ হওয়ায় সবচেয়ে ভালো।`,
-    `আপনি হারার শিল্পে দক্ষতা অর্জন করেছেন।`,
-    `আপনি একটি চলমান, কথা বলা হারার মেশিন।`,
-    `আপনি এখন পর্যন্ত দেখা সবচেয়ে খারাপ খেলোয়াড়।`,
+    `চিন্তা করবেন না, এটা পুরোপুরি আপনার দোষ নাও হতে পারে।`,
+
+    `হারাটা আপনি এত নিয়মিত করেন যে এটা এখন আপনার পরিচয় হয়ে গেছে।`,
+    `আপনাকে দেখে মনে হয় জেতার ধারণাটাই আপনার অচেনা।`,
+    `হয়তো এই খেলাটা আপনার জন্য না।`,
+    `আশ্চর্য! আপনি খেলছিলেন, নাকি ইচ্ছে করে হারছিলেন।`,
+    `শেষ স্থানে আসাটাকে আপনি অভ্যাসে পরিণত করেছেন।`,
+    `ব্যর্থতারও যদি রাজা থাকত, আপনি সিংহাসনে বসতেন।`,
+    `আপনি হারাকে এত সহজ দেখান যে মনে হয় এটাই আপনার একমাত্র দক্ষতা।`,
+    `আপনি এতটাই খারাপ যে মাঝেমধ্যে সেটা প্রতিভা বলে ভুল হতে পারে।`,
+    `আপনি যেন হারার জন্যই বানানো হয়েছেন।`,
+    `এত ধারাবাহিকভাবে হারেন যে তার জন্য আলাদা ট্রফি থাকা উচিত।`,
+    `সবচেয়ে বাজে হওয়ার দৌড়ে আপনি অনেক এগিয়ে।`,
+    `আপনি হারার শিল্পকে নতুন উচ্চতায় নিয়ে গেছেন।`,
+    `আপনি একদম হাঁটতে-চলতে থাকা হারার মেশিন।`,
+    `এত খারাপ খেলোয়াড় খুব কমই দেখা যায়।`,
+    `আপনি দলে থাকলে প্রতিপক্ষের আত্মবিশ্বাস দ্বিগুণ হয়ে যায়।`,
+    `আপনার পারফরম্যান্স দেখে বোঝা কঠিন, আপনি নিয়ম জানেন কি না।`,
+    `আপনি খেলায় নামলেই মনে হয় কেউ একজন নিশ্চিতভাবে হারবে—আর সে আপনি।`,
+    `জেতার কাছাকাছিও আপনি যান না।`,
+    `আপনার খেলা দেখে মনে হয় পরাজয়ও আপনাকে দেখে করুণা করে।`,
+    `আপনি চেষ্টা করেন, কিন্তু ফলটা সব সময় একই রকম লজ্জাজনক।`,
+    `আপনার উপস্থিতিই ম্যাচের মান কমিয়ে দেয়।`,
+    `আপনার খেলা দেখে মনে হয় হারেরও একটা নিম্নসীমা আছে, আর আপনি সেটাও ভেঙে ফেলেছেন।`,
+    `আপনি এত খারাপ যে আপনাকে দেখে বটরাও আত্মসম্মান পায়।`,
+    `আপনি খেলতে নামেন, আর দল জেতার আশা ছেড়ে দেয়।`,
+    `আপনার ভুলগুলো এত ধারাবাহিক যে ওগুলোই আপনার আসল স্কিল।`,
+    `আপনি মাঠে নামলেই মনে হয় কেউ একজন ইচ্ছা করে sabotage করছে।`,
+    `আপনাকে হারতে দেখে অবাক হওয়ার কিছু নেই; এটাই আপনার স্বাভাবিক অবস্থা।`,
+    `আপনি জেতেন না, শুধু পরাজয়ের নতুন রেকর্ড বানান।`,
   ],
   'de-DE': [
     `Jede Niederlage ist eine Lernmöglichkeit.`,
