@@ -13,9 +13,9 @@ const isNovember = currentMonth === months.november
 const isDecember = currentMonth === months.december
 
 export const getBackgroundImage = () => {
-  if (isJanuary) return 'url(/fireworks.jpeg)'
-  if (isNovember) return 'url(/turkeys.jpeg)'
-  if (isDecember) return 'url(/snowmen.jpeg)'
+  // if (isJanuary) return 'url(/fireworks.jpeg)'
+  // if (isNovember) return 'url(/turkeys.jpeg)'
+  // if (isDecember) return 'url(/snowmen.jpeg)'
   return 'url(/chickens.jpeg)'
 }
 
@@ -23,5 +23,5 @@ export const getShowImageLabel = (language: AvailableLanguageCode) => {
   if (isJanuary) return `${translations.showFireworks[language]} 🎆`
   if (isNovember) return `${translations.showTurkeys[language]} 🦃`
   if (isDecember) return `${translations.showSnowmen[language]} ⛄️`
-  return `${translations.showChickens[language]} 🐓`
+  return `${translations.showChickens[language]} 🦆`
 }

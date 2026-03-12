@@ -2000,7 +2000,7 @@ const translations: Translations = {
     'pt-BR': 'Configuração',
   },
   showChickens: {
-    'bn-BD': 'মুরগি দেখান',
+    'bn-BD': 'হাঁস দেখান',
     'de-DE': 'Hühner anzeigen',
     'en-US': 'Show Chickens',
     'es-MX': 'Mostrar Pollos',
